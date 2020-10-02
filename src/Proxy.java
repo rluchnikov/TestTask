@@ -16,6 +16,7 @@ public class Proxy {
   public void getDataAndSend() {
     if (!cache.isEmpty()) {
       System.out.println("cache size before: " +cache.size());
+      //здесь можно распараллелить через parallelStream 
       cache.forEach((s) -> {
         //если отправка выполнена удаляем пакет из очереди
         if (this.send(s)) {
